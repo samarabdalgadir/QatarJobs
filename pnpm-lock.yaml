@@ -11,9 +11,15 @@ importers:
       '@clerk/nextjs':
         specifier: ^6.29.0
         version: 6.29.0(next@15.4.6(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@prisma/client':
+        specifier: ^4.15.0
+        version: 4.16.2(prisma@4.16.2)
       next:
         specifier: 15.4.6
         version: 15.4.6(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      prisma:
+        specifier: ^4.15.0
+        version: 4.16.2
       react:
         specifier: 19.1.0
         version: 19.1.0
@@ -21,23 +27,23 @@ importers:
         specifier: 19.1.0
         version: 19.1.0(react@19.1.0)
     devDependencies:
-      '@eslint/eslintrc':
-        specifier: ^3
-        version: 3.3.1
+      '@next/eslint-plugin-next':
+        specifier: ^15.4.6
+        version: 15.4.6
       '@tailwindcss/postcss':
-        specifier: ^4
+        specifier: ^4.1.11
         version: 4.1.11
       '@types/node':
-        specifier: ^20
+        specifier: ^20.19.9
         version: 20.19.9
       '@types/react':
-        specifier: ^19
+        specifier: ^19.1.9
         version: 19.1.9
       '@types/react-dom':
-        specifier: ^19
+        specifier: ^19.1.7
         version: 19.1.7(@types/react@19.1.9)
       eslint:
-        specifier: ^9
+        specifier: ^9.32.0
         version: 9.32.0(jiti@2.5.1)
       eslint-config-next:
         specifier: 15.4.6
@@ -46,11 +52,8 @@ importers:
         specifier: ^3.6.2
         version: 3.6.2
       tailwindcss:
-        specifier: ^4
+        specifier: ^4.1.11
         version: 4.1.11
-      typescript:
-        specifier: ^5
-        version: 5.9.2
 
 packages:
 
@@ -375,6 +378,21 @@ packages:
   '@nolyfill/is-core-module@1.0.39':
     resolution: {integrity: sha512-nn5ozdjYQpUCZlWGuxcJY/KpxkWQs4DcbMCmKojjyrYDEAGy4Ce19NN4v5MduafTwJlbKc99UA8YhSVqq9yPZA==}
     engines: {node: '>=12.4.0'}
+
+  '@prisma/client@4.16.2':
+    resolution: {integrity: sha512-qCoEyxv1ZrQ4bKy39GnylE8Zq31IRmm8bNhNbZx7bF2cU5aiCCnSa93J2imF88MBjn7J9eUQneNxUQVJdl/rPQ==}
+    engines: {node: '>=14.17'}
+    peerDependencies:
+      prisma: '*'
+    peerDependenciesMeta:
+      prisma:
+        optional: true
+
+  '@prisma/engines-version@4.16.1-1.4bc8b6e1b66cb932731fb1bdbbc550d1e010de81':
+    resolution: {integrity: sha512-q617EUWfRIDTriWADZ4YiWRZXCa/WuhNgLTVd+HqWLffjMSPzyM5uOWoauX91wvQClSKZU4pzI4JJLQ9Kl62Qg==}
+
+  '@prisma/engines@4.16.2':
+    resolution: {integrity: sha512-vx1nxVvN4QeT/cepQce68deh/Turxy5Mr+4L4zClFuK1GlxN3+ivxfuv+ej/gvidWn1cE1uAhW7ALLNlYbRUAw==}
 
   '@rtsao/scc@1.1.0':
     resolution: {integrity: sha512-zt6OdqaDoOnJ1ZYsCYGt9YmWzDXl4vQdKTyJev62gFhRGKdx7mcT54V9KIjg+d2wi9EXsPvAPKe7i7WjfVWB8g==}
@@ -1579,6 +1597,11 @@ packages:
     engines: {node: '>=14'}
     hasBin: true
 
+  prisma@4.16.2:
+    resolution: {integrity: sha512-SYCsBvDf0/7XSJyf2cHTLjLeTLVXYfqp7pG5eEVafFLeT0u/hLFz/9W196nDRGUOo1JfPatAEb+uEnTQImQC1g==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+
   prop-types@15.8.1:
     resolution: {integrity: sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==}
 
@@ -2166,6 +2189,16 @@ snapshots:
       fastq: 1.19.1
 
   '@nolyfill/is-core-module@1.0.39': {}
+
+  '@prisma/client@4.16.2(prisma@4.16.2)':
+    dependencies:
+      '@prisma/engines-version': 4.16.1-1.4bc8b6e1b66cb932731fb1bdbbc550d1e010de81
+    optionalDependencies:
+      prisma: 4.16.2
+
+  '@prisma/engines-version@4.16.1-1.4bc8b6e1b66cb932731fb1bdbbc550d1e010de81': {}
+
+  '@prisma/engines@4.16.2': {}
 
   '@rtsao/scc@1.1.0': {}
 
@@ -3505,6 +3538,10 @@ snapshots:
   prelude-ls@1.2.1: {}
 
   prettier@3.6.2: {}
+
+  prisma@4.16.2:
+    dependencies:
+      '@prisma/engines': 4.16.2
 
   prop-types@15.8.1:
     dependencies:
